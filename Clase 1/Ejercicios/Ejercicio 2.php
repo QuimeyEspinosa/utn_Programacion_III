@@ -5,80 +5,60 @@ año es. Utilizar una estructura selectiva múltiple. </h3>
 
 <?php
 
-printf(date("d/n/y"));
-printf("<br>");
-printf(date("d/n/y"));
+$day = date("j");
+$month = date("n");
 
-$dia = date("j");
-$estacion = "";
+echo date("j.n.Y");
+echo "</br>";
+echo date("D j F Y");
+echo "</br>";
+echo date("j M y");
+echo "</br>";
+echo "</br>";
 
-switch(date("n"))
+switch($month)
 {
-    case "1":        
-        $estacion = "Verano";
-        break;
-
-    case "2":
-        $estacion = "Verano";
-        break;
-
-    case "3":
-        if($dia < 21)
+    case 1:
+    case 2:
+    case 3:
+        if($day < 21)
         {
-            $estacion = "Verano";
+            echo "Es verano";
+            break;
         }
-        $estacion = "Otoño";
+        echo "Es otoño";
         break;
-
-    case "4":
-        $estacion = "Otoño";
-        break;
-
-    case "5":
-        $estacion = "Otoño";
-        break;
-
-    case "6":
-        if($dia < 21)
+    case 4:
+    case 5:
+    case 6:
+        if($day < 21)
         {
-            $estacion = "Otoño";
+            echo "Es otoño";
+            break;
         }
-        $estacion = "Invierno";
+        echo "Es invierno";
         break;
-
-    case "7":
-        $estacion = "Invierno";
-        break;
-
-    case "8":
-        $estacion = "Invierno";
-        break;
-
-    case "9":
-        if($dia < 21)
+    case 7:
+    case 8:
+    case 9:
+        if($day < 21)
         {
-            $estacion = "Invierno";
+            echo "Es invierno";
+            break;
         }
-        $estacion = "Primavera";
+        echo "Es primavera";
         break;
-        
-    case "10":
-        $estacion = "Primavera";    
-        break;
-
-    case "11":
-        $estacion = "Primavera";
-        break;
-
-    case "12":
-        if($dia < 21)
+    case 10:
+    case 11:
+    case 12:
+        if($day < 21)
         {
-            $estacion = "Primavera";
-        }
-        $estacion = "Verano";
+            echo "Es primavera";
+            break;
+        }        
+    default:
+        echo "Es verano";
         break;
 }
-
-echo "<br> Estacion del año: ", $estacion;
 
 ?>
